@@ -1,0 +1,541 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Doto:wght@100..900&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Fira+Code:wght@300..700&family=Glory:ital,wght@0,100..800;1,100..800&family=Itim&family=Jost:ital,wght@0,100..900;1,100..900&family=Martian+Mono:wght@100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Parkinsans:wght@300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yuji+Mai&display=swap");
+
+@import url("https://fonts.cdnfonts.com/css/gilroy-bold");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", serif;
+  color: #fff;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar{
+  display: block;
+  width: 4px;
+  background: linear-gradient(to left bottom, #119f3a 0%, #a3d421 80%);;
+}
+
+body::-webkit-scrollbar-thumb{
+  background-color: #fff;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+*::selection{
+  background-color: #fff;
+  color: #95c11e;
+}
+
+#nav {
+  width: 100%;
+  height: 17%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4vw;
+  position: fixed;
+  padding: 0 10vw;
+  z-index: 99;
+}
+
+#cursor-div {
+  width: 1.5vw;
+  height: 1.5vw;
+  position: fixed;
+  border-radius: 50%;
+  background-color: #95c11e;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  z-index: 99;
+}
+#blur-cursor {
+  width: 220px;
+  height: 220px;
+  position: fixed;
+  border-radius: 50%;
+  background-color: #96c11ec0;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  filter: blur(90px);
+  -webkit-filter: blur(90px);
+  z-index: 9;
+}
+
+#nav img {
+  width: 6.2vw;
+}
+
+#nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: fixed;
+  z-index: -1;
+}
+
+#main {
+  position: relative;
+  background-color: #00000058;
+}
+
+#page-01 {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 10;
+}
+
+#page-01 h1 {
+  font-size: 8.5vw;
+  margin-bottom: 2vw;
+  position: relative;
+  /* z-index: 10; */
+}
+
+#page-01 h1::before {
+  content: "EAT. DRINK. PLAY.";
+  top: -5px;
+  left: -4px;
+  color: #000;
+  position: absolute;
+  z-index: -1;
+  -webkit-text-stroke: 5px #95c11e;
+}
+
+#page-01 h2 {
+  font-size: 2vw;
+  margin-bottom: 1vw;
+}
+
+#page-01 h3 {
+  width: 45%;
+  text-align: center;
+  font-size: 1.5vw;
+  font-weight: 500;
+}
+
+#page-02 {
+  min-height: 100vh;
+  width: 100%;
+  z-index: 10;
+}
+
+#scroller {
+  /* background-color: red; */
+  white-space: nowrap;
+  position: relative;
+  z-index: 10;
+  /* overflow-x: auto; */
+  /* overflow-y: hidden; */
+}
+
+.scroller-01 {
+  display: inline-block;
+  white-space: nowrap;
+  animation-name: scroll;
+  animation-duration: 22s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.scroller-01 h4 {
+  -webkit-text-stroke: 3px #95c11e;
+  color: transparent;
+  display: inline-block;
+  font-size: 120px;
+  text-transform: uppercase;
+  font-family: "sans-serif";
+  margin-right: 10px;
+}
+
+.scroller-01 h4:hover {
+  color: #95c11e;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+  }
+}
+
+#about-section {
+  /* background-color: red; */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2vw 6.5vw;
+}
+
+#about-section img {
+  width: 14vw;
+  height: 14vw;
+  object-fit: cover;
+  border-radius: 21px;
+  -webkit-border-radius: 21px;
+  -moz-border-radius: 21px;
+  -ms-border-radius: 21px;
+  -o-border-radius: 21px;
+}
+
+#about-section .content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.4vw;
+}
+
+#about-section .content h2 {
+  font-size: 65px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+#about-section .content p {
+  width: 80%;
+  text-align: center;
+  font-size: 20px;
+}
+
+#image-gallery {
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2vw 10vw;
+  height: 70vh;
+  position: relative;
+  gap: 2.5vw;
+}
+
+#image-gallery .img {
+  width: 55%;
+  border-radius: 20px;
+  height: 27vw;
+  /* scale: 1; */
+  position: relative;
+  /* background-color: aqua; */
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  scale: 0.7;
+  z-index: 10;
+}
+
+#image-gallery .img1 {
+  background-image: url(https://sidcup-golf-family.netlify.app/Assests/card1.avif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#image-gallery .img2 {
+  background-image: url(https://sidcup-golf-family.netlify.app/Assests/card2.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#image-gallery .img3 {
+  background-image: url(https://sidcup-golf-family.netlify.app/Assests/card3.avif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: #95c11e;
+  padding: 30px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.overlay:hover {
+  opacity: 1;
+}
+
+.overlay h3 {
+  font-size: 1.85vw;
+  margin-bottom: 2vw;
+  color: #000;
+  font-weight: 600;
+}
+
+.overlay p {
+  color: #000;
+  font-size: 1.3vw;
+  line-height: 1.5vw;
+}
+
+#green-div {
+  width: 100%;
+  height: 33vh;
+  /* background-color: #95c11e; */
+  background: linear-gradient(to left bottom, #119f3a, #ace022);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* z-index: 10;
+  position: relative; */
+}
+
+#green-div img {
+  height: 100%;
+  width: 12%;
+  object-fit: cover;
+  /* position: relative; */
+  /* z-index: 11; */
+}
+
+#green-div h4 {
+  font-size: 2vw;
+  width: 50%;
+  text-align: center;
+  line-height: 4vw;
+  color: #000;
+  font-weight: 600;
+}
+
+#page-03 {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* background-color: #95c11e; */
+}
+
+#page-03 > p {
+  width: 57%;
+  text-align: center;
+  font-size: 2vw;
+  line-height: 2.8vw;
+  font-weight: 600;
+}
+
+#page-03 img {
+  width: 5%;
+  position: absolute;
+}
+
+#page-03 #colon-01 {
+  position: absolute;
+  top: 12%;
+  left: 10%;
+}
+
+#page-03 #colon-02 {
+  position: absolute;
+  top: 85%;
+  right: 10%;
+}
+
+#page-04 {
+  min-height: 40vh;
+  width: 100%;
+}
+
+#page-04-section-01 {
+  width: 100%;
+  height: 35vh;
+  /* background-color: red;x */
+  /* display: flex; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#page-04-section-01 h1 {
+  font-size: 6.35vw;
+  width: 100%;
+  white-space: nowrap;
+  font-family: "sans-serif";
+  text-align: center;
+  -webkit-text-stroke: 3px #fff;
+  color: transparent;
+  position: absolute;
+  top: 10%;
+}
+
+#page-04-section-01 .cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5vw;
+}
+
+#page-04-section-01 .card {
+  border-radius: 20px;
+  width: 25vw;
+  height: 11vw;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  
+}
+
+#card-01 {
+  background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/page-toptracer.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+  background-size: cover;
+  background-position: center;
+  /* scale: 1; */
+}
+
+#card-02 {
+  background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/page-lessons.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+  background-position: center;
+  background-size: cover;
+}
+
+#card-03 {
+  background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/page-ag.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+  background-position: center;
+  background-size: cover;
+}
+
+#page-04-section-01 .card .layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 20px;
+  background-color: #95c11e;
+  transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+  -ms-transition: all ease 0.5s;
+  -o-transition: all ease-in 0.5s;
+}
+
+#page-04-section-01 .card h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #000;
+  position: relative;
+  z-index: 10;
+}
+
+#page-04-section-01 .card:hover .layer {
+  opacity: 0;
+}
+
+#page-04-section-01 .card:hover h2{
+  color: #fff;
+}
+
+footer{
+  /* background-color: red; */
+  background: linear-gradient(to left bottom, #119f3a 0%, #a3d421 80%);
+  width: 100%;
+  height: 45vh;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+footer .images{
+  height: 100%;
+  /* background-color: #119f3a; */
+  width: 27%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .images #img-01{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+footer .images #img-02{
+  width: 140px;
+  height: 140px;
+  position: absolute;
+  /* text-align: center; */
+}
+
+.footer-content{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 7vw;
+  position: absolute;
+  /* background-color: aqua; */
+  left: 25%;
+}
+
+.footer-content-01 h4{
+  font-size: 1.6vw;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: #000;
+  font-weight: 600;
+}
+
+.footer-content-02 h4{
+  font-size: 1.6vw;
+  color: #000;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.footer-content-03 h5{
+font-size: 1vw;
+color: #000;
+font-weight: 600;
+}
